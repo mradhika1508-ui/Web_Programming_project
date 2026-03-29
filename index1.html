@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Order</title>
+        <style>
+            body{
+                font-family: Arial;
+                margin: 30px;
+            }
+            fieldset{
+                margin-bottom: 20px;
+                padding: 15px;
+            }
+
+            button{
+                padding: 10px;
+                background-color: green;
+                color: white;
+                border:none;
+                border-radius: 5px;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Pizza Order Form</h2>
+        <form id="pizzaForm">
+            <fieldset id="sizeField">
+                <legend>Size Selection</legend>
+                <label>
+                    <input type="radio" name="size" value="8">
+                    Small ($8)
+                </label><br>
+                <label>
+                    <input type="radio" name="size" value="10">
+                    Medium ($10)
+                </label><br>
+                <label>
+                    <input type="radio" name="size" value="12">
+                    Large ($12)
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Toppings  ($1 each)</legend>
+                <label><input type="checkbox" value="1">Pepporoni</label><br>
+                <label><input type="checkbox" value="1">Mushrooms</label><br>
+                <label><input type="checkbox" value="1">Olives</label><br>
+                <label><input type="checkbox" value="1">Extra Cheese</label><br>
+
+            </fieldset>
+
+            <h3>Total price:$<span id="total">0</span></h3>
+
+            <button type="button" id="orderBtn">Place Order</button>
+        </form>
+
+        <script>
+            let form = document.getElementById("pizzaForm");
+            let totalDisplay= document.getElementById("total");
+            let sizeField=document.getElementById("sizeField");
+
+            form.addEventListner("change",calculateTotal);
+            document.getElementById("orderBtn").addEventListner("click",placeOrder);
+
+            function calculateTotal(){
+                let total=0;
+                let size=document.querySelector('input[name="size"]:checked');
+                
+            }
+        </script>
+    </body>
+</html>
